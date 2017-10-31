@@ -22,9 +22,9 @@ def binarySearchRecursion(alist, key, low, high): #recursion version
 	if low <= high:
 		mid = (high + low) / 2
 		if key < alist[mid]:
-			return interpolationSearch(alist, key, low, mid-1)
+			return binarySearchRecursion(alist, key, low, mid-1)
 		elif key > alist[mid]:
-			return interpolationSearch(alist, key, mid+1, high)
+			return binarySearchRecursion(alist, key, mid+1, high)
 		else:
 			return mid
 	else:
